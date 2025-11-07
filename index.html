@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,6 +21,12 @@
     <meta property="twitter:title" content="SMART HOTLINE - Solution de Prospection Téléphonique IA">
     <meta property="twitter:description" content="Solution complète de prospection téléphonique avec auto-dialer IA, filtrage répondeurs et CRM intégré">
     <meta property="twitter:image" content="https://z-cdn-media.chatglm.cn/files/1450d3e5-bc21-42de-839c-752e41a11ff0__2015ea5f-95e4-45d4-913c-2d5b4da14544.jpeg?auth_key=1762212894-d39ecaaf3623446fa4348a36fc998cd9-0-b69109e853e1a1296f48457894ca5638">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="French">
+    <meta name="revisit-after" content="7 days">
+    <link rel="canonical" href="https://www.smart-hotline.com/">
     
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
@@ -218,6 +223,21 @@
             font-weight: 500;
             transition: color 0.3s ease;
             font-size: 0.95rem;
+            position: relative;
+        }
+
+        nav ul li a.active {
+            color: var(--primary);
+        }
+
+        nav ul li a.active:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
         }
 
         nav ul li a:hover {
@@ -1062,6 +1082,55 @@
             color: var(--dark);
         }
 
+        /* Managed Agents Section */
+        .managed-agents {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e6f0ff 100%);
+            padding: 80px 0;
+        }
+
+        .managed-agents-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .managed-agents-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .managed-agents-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .managed-agents-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .managed-agents-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .managed-agents-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .managed-agents-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
         /* Footer */
         footer {
             background: var(--dark);
@@ -1200,6 +1269,11 @@
             display: flex;
         }
 
+        .chat-popup.minimized {
+            height: 50px;
+            overflow: hidden;
+        }
+
         .chat-header {
             background: var(--gradient);
             color: white;
@@ -1210,9 +1284,10 @@
             align-items: center;
         }
 
-        .chat-close {
+        .chat-close, .chat-minimize {
             cursor: pointer;
             font-size: 1.2rem;
+            margin-left: 10px;
         }
 
         .chat-body {
@@ -1652,6 +1727,10 @@
             .contact-buttons {
                 grid-template-columns: 1fr;
             }
+            
+            .managed-agents-cards {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1770,13 +1849,13 @@
             <div class="header-bottom">
                 <nav>
                     <ul>
-                        <li><a href="#" data-page="home" data-translate="nav-home">Accueil</a></li>
-                        <li><a href="#" data-page="features" data-translate="nav-features">Fonctionnalités</a></li>
-                        <li><a href="#" data-page="pricing" data-translate="nav-pricing">Tarifs</a></li>
-                        <li><a href="#" data-page="b2b" data-translate="nav-b2b">Services B2B</a></li>
-                        <li><a href="#" data-page="about" data-translate="nav-about">À propos</a></li>
-                        <li><a href="#" data-page="blog" data-translate="nav-blog">Blog</a></li>
-                        <li><a href="#" data-page="contact" data-translate="nav-contact">Contact</a></li>
+                        <li><a href="#home" data-page="home" data-translate="nav-home">Accueil</a></li>
+                        <li><a href="#features" data-page="features" data-translate="nav-features">Fonctionnalités</a></li>
+                        <li><a href="#pricing" data-page="pricing" data-translate="nav-pricing">Tarifs</a></li>
+                        <li><a href="#b2b" data-page="b2b" data-translate="nav-b2b">Services B2B</a></li>
+                        <li><a href="#about" data-page="about" data-translate="nav-about">À propos</a></li>
+                        <li><a href="#blog" data-page="blog" data-translate="nav-blog">Blog</a></li>
+                        <li><a href="#contact" data-page="contact" data-translate="nav-contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -1788,6 +1867,7 @@
         <!-- Hero Section -->
         <div class="hero">
             <div class="container">
+                <img src="hero-1200.webp" alt="SMART HOTLINE - Solution de Prospection Téléphonique IA" class="demo-image" loading="lazy">
                 <h1 data-translate="hero-title">Votre système de prospection téléphonique clé en main</h1>
                 <p data-translate="hero-subtitle">Solution complète avec CRM intégré, auto-dialer IA et listes de contacts mobiles 100% actualisées. Jusqu'à 5x plus de contacts utiles par heure.</p>
                 <div class="hero-buttons">
@@ -1821,7 +1901,7 @@
                         <a href="#" class="btn btn-primary" data-page="features" data-translate="demo-cta">Découvrir l'interface</a>
                     </div>
                     <div class="demo-image fade-in">
-                        <img src="https://z-cdn-media.chatglm.cn/files/1450d3e5-bc21-42de-839c-752e41a11ff0__2015ea5f-95e4-45d4-913c-2d5b4da14544.jpeg?auth_key=1762212894-d39ecaaf3623446fa4348a36fc998cd9-0-b69109e853e1a1296f48457894ca5638" alt="CRM Interface" style="width: 100%; height: auto; border-radius: var(--radius);">
+                        <img src="https://z-cdn-media.chatglm.cn/files/1450d3e5-bc21-42de-839c-752e41a11ff0__2015ea5f-95e4-45d4-913c-2d5b4da14544.jpeg?auth_key=1762212894-d39ecaaf3623446fa4348a36fc998cd9-0-b69109e853e1a1296f48457894ca5638" alt="CRM Interface" style="width: 100%; height: auto; border-radius: var(--radius);" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -1940,11 +2020,11 @@
                 <h2 class="section-title" data-translate="integration-title">Intégrations Simplifiées</h2>
                 <p data-translate="integration-desc">SMART HOTLINE s'intègre parfaitement avec vos outils existants pour une expérience fluide et sans interruption.</p>
                 <div class="integration-logos">
-                    <img src="https://picsum.photos/seed/salesforce/120/60.jpg" alt="Salesforce" class="integration-logo">
-                    <img src="https://picsum.photos/seed/hubspot/120/60.jpg" alt="HubSpot" class="integration-logo">
-                    <img src="https://picsum.photos/seed/zoho/120/60.jpg" alt="Zoho" class="integration-logo">
-                    <img src="https://picsum.photos/seed/pipedrive/120/60.jpg" alt="Pipedrive" class="integration-logo">
-                    <img src="https://picsum.photos/seed/monday/120/60.jpg" alt="Monday.com" class="integration-logo">
+                    <img src="https://picsum.photos/seed/salesforce/120/60.jpg" alt="Salesforce" class="integration-logo" loading="lazy">
+                    <img src="https://picsum.photos/seed/hubspot/120/60.jpg" alt="HubSpot" class="integration-logo" loading="lazy">
+                    <img src="https://picsum.photos/seed/zoho/120/60.jpg" alt="Zoho" class="integration-logo" loading="lazy">
+                    <img src="https://picsum.photos/seed/pipedrive/120/60.jpg" alt="Pipedrive" class="integration-logo" loading="lazy">
+                    <img src="https://picsum.photos/seed/monday/120/60.jpg" alt="Monday.com" class="integration-logo" loading="lazy">
                 </div>
                 <div class="cta-buttons" style="margin-top: 40px; justify-content: center;">
                     <a href="#" class="btn btn-primary" data-page="features" data-translate="integration-cta">Voir toutes les intégrations</a>
@@ -1989,7 +2069,7 @@
                 <div class="case-study-container">
                     <div class="case-study-card fade-in">
                         <div class="case-study-image">
-                            <img src="https://z-cdn-media.chatglm.cn/files/ebdb1a93-770d-49eb-bcf2-97cb5963d86a__1b458a19-3336-4155-a375-f1ef9aeeac31.jpeg?auth_key=1762212894-4d68d0cce99f4ef69e54f908edd1dbeb-0-4142d6a2f15ada914cbacb7257f21659" alt="FinTech Solutions">
+                            <img src="https://z-cdn-media.chatglm.cn/files/ebdb1a93-770d-49eb-bcf2-97cb5963d86a__1b458a19-3336-4155-a375-f1ef9aeeac31.jpeg?auth_key=1762212894-4d68d0cce99f4ef69e54f908edd1dbeb-0-4142d6a2f15ada914cbacb7257f21659" alt="FinTech Solutions" loading="lazy">
                         </div>
                         <div class="case-study-content">
                             <h3 data-translate="case-study-1-title">FinTech Solutions</h3>
@@ -2012,7 +2092,7 @@
                     </div>
                     <div class="case-study-card fade-in">
                         <div class="case-study-image">
-                            <img src="https://z-cdn-media.chatglm.cn/files/f322a198-07fe-41af-902c-40bec486ec35__e9c5f20a-2e88-42ea-a548-347219efbc23.jpeg?auth_key=1762212894-3fc21edbe93f4b2cb002e50874aa82e7-0-ca15276925605c48a35168894ca5638" alt="MarketPro Agency">
+                            <img src="https://z-cdn-media.chatglm.cn/files/f322a198-07fe-41af-902c-40bec486ec35__e9c5f20a-2e88-42ea-a548-347219efbc23.jpeg?auth_key=1762212894-3fc21edbe93f4b2cb002e50874aa82e7-0-ca15276925605c48a35168894ca5638" alt="MarketPro Agency" loading="lazy">
                         </div>
                         <div class="case-study-content">
                             <h3 data-translate="case-study-2-title">MarketPro Agency</h3>
@@ -2127,7 +2207,7 @@
                             <a href="#" class="btn btn-primary" data-page="pricing" data-translate="demo-cta-features">Voir les tarifs</a>
                         </div>
                         <div class="demo-image fade-in">
-                            <img src="https://z-cdn-media.chatglm.cn/files/d8fa3beb-5695-4d85-8a7d-91e7bc956a5e__4cc66f62-aa0d-482e-a1e5-0148809010af.jpeg?auth_key=1762212894-8e81410870054cb2b5eafbf18d100438-0-d4b95ef218c9443b6665435c374f9485" alt="CRM Dashboard" style="width: 100%; height: auto; border-radius: var(--radius);">
+                            <img src="https://z-cdn-media.chatglm.cn/files/d8fa3beb-5695-4d85-8a7d-91e7bc956a5e__4cc66f62-aa0d-482e-a1e5-0148809010af.jpeg?auth_key=1762212894-8e81410870054cb2b5eafbf18d100438-0-d4b95ef218c9443b6665435c374f9485" alt="CRM Dashboard" style="width: 100%; height: auto; border-radius: var(--radius);" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -2342,7 +2422,7 @@
                             <a href="#" class="btn btn-primary" data-page="contact" data-translate="demo-cta-pricing">Contacter un expert</a>
                         </div>
                         <div class="demo-image fade-in">
-                            <img src="https://z-cdn-media.chatglm.cn/files/1546e4fe-c20b-4ec3-8973-b44177e88c7b__e5fbe7ff-2dc9-4d75-a0d6-71149b562be6.jpeg?auth_key=1762212894-f9c6d173a83240858e02cd5a735fd98f-0-11d0f89309a71fee3ffd91e87ce54788" alt="Pricing Dashboard" style="width: 100%; height: auto; border-radius: var(--radius);">
+                            <img src="https://z-cdn-media.chatglm.cn/files/1546e4fe-c20b-4ec3-8973-b44177e88c7b__e5fbe7ff-2dc9-4d75-a0d6-71149b562be6.jpeg?auth_key=1762212894-f9c6d173a83240858e02cd5a735fd98f-0-11d0f89309a71fee3ffd91e87ce54788" alt="Pricing Dashboard" style="width: 100%; height: auto; border-radius: var(--radius);" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -2437,6 +2517,44 @@
                                 <li><i class="fas fa-check"></i> <span data-translate="pricing-feature-11">Support sur mesure</span></li>
                             </ul>
                             <a href="#" class="btn btn-primary select-plan" data-plan="custom" data-translate="pricing-contact-us">Nous contacter</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Managed Agents Section -->
+            <section class="managed-agents">
+                <div class="container">
+                    <div class="managed-agents-content">
+                        <h2 class="section-title">Agents Gérés - Service Optionnel</h2>
+                        <p>Optimisez votre prospection avec notre service d'agents gérés. Nos agents professionnels formés utilisent la technologie SMART HOTLINE pour générer des leads qualifiés pour votre entreprise.</p>
+                        
+                        <div class="managed-agents-cards">
+                            <div class="managed-agents-card">
+                                <div class="managed-agents-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <h3>Agents Dédiés</h3>
+                                <p>Agents exclusivement dédiés à votre entreprise, formés sur vos produits et services.</p>
+                            </div>
+                            <div class="managed-agents-card">
+                                <div class="managed-agents-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3>Rapports Détaillés</h3>
+                                <p>Suivi complet des performances avec des rapports quotidiens et analyses approfondies.</p>
+                            </div>
+                            <div class="managed-agents-card">
+                                <div class="managed-agents-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <h3>Support Continu</h3>
+                                <p>Supervision constante et optimisation des campagnes pour des résultats maximaux.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-buttons" style="margin-top: 40px; justify-content: center;">
+                            <a href="#" class="btn btn-primary" data-page="contact">En savoir plus sur les agents gérés</a>
                         </div>
                     </div>
                 </div>
@@ -2558,7 +2676,7 @@
                             <a href="#" class="btn btn-primary" data-page="contact" data-translate="demo-cta-b2b">Contacter un expert B2B</a>
                         </div>
                         <div class="demo-image fade-in">
-                            <img src="https://z-cdn-media.chatglm.cn/files/78a0e33d-b8f0-4740-907b-abf86c6c5b2c__fb95c419-f0e7-4233-8971-a43430a71d01.jpeg?auth_key=1762212894-662d45325fa24ed485f4d0a913795443-0-263f443229ed60dc68ada9bc02aa5638" alt="B2B Solution" style="width: 100%; height: auto; border-radius: var(--radius);">
+                            <img src="https://z-cdn-media.chatglm.cn/files/78a0e33d-b8f0-4740-907b-abf86c6c5b2c__fb95c419-f0e7-4233-8971-a43430a71d01.jpeg?auth_key=1762212894-662d45325fa24ed485f4d0a913795443-0-263f443229ed60dc68ada9bc02aa5638" alt="B2B Solution" style="width: 100%; height: auto; border-radius: var(--radius);" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -2644,7 +2762,7 @@
                     <div class="case-study-container">
                         <div class="case-study-card fade-in">
                             <div class="case-study-image">
-                                <img src="https://z-cdn-media.chatglm.cn/files/34321800-cb57-4ade-9c9a-cfe072e8e556__48338781-9977-4ccd-941d-beba040b1c68.jpeg?auth_key=1762212894-ec8a0b99cbff46cab457615fecb41b75-0-3acaecd0c6165376f998a066987fe0ac" alt="Enterprise Case 1">
+                                <img src="https://z-cdn-media.chatglm.cn/files/34321800-cb57-4ade-9c9a-cfe072e8e556__48338781-9977-4ccd-941d-beba040b1c68.jpeg?auth_key=1762212894-ec8a0b99cbff46cab457615fecb41b75-0-3acaecd0c6165376f998a066987fe0ac" alt="Enterprise Case 1" loading="lazy">
                             </div>
                             <div class="case-study-content">
                                 <h3 data-translate="case-study-b2b-1-title">Multinationale FinTech</h3>
@@ -2667,7 +2785,7 @@
                         </div>
                         <div class="case-study-card fade-in">
                             <div class="case-study-image">
-                                <img src="https://z-cdn-media.chatglm.cn/files/eeaacb3d-a4cb-46c9-9004-52a3136d88a2_Gemini_Generated_Image_p89nzop89nzop89n.png?auth_key=1762212894-5cc49e614af6471394ac8391bb338788-0-4712fe57666f6abfe047838df62ffd23" alt="Enterprise Case 2">
+                                <img src="https://z-cdn-media.chatglm.cn/files/eeaacb3d-a4cb-46c9-9004-52a3136d88a2_Gemini_Generated_Image_p89nzop89nzop89n.png?auth_key=1762212894-5cc49e614af6471394ac8391bb338788-0-4712fe57666f6abfe047838df62ffd23" alt="Enterprise Case 2" loading="lazy">
                             </div>
                             <div class="case-study-content">
                                 <h3 data-translate="case-study-b2b-2-title">Géant de l'Assurance</h3>
@@ -2722,11 +2840,11 @@
                     <div class="demo-container">
                         <div class="demo-text fade-in">
                             <h2 data-translate="demo-title-about">Notre Histoire</h2>
-                            <p data-translate="demo-desc-about">Fondée en 2018 par une équipe d'experts en technologie et en vente, SMART HOTLINE est née d'une observation simple : les entreprises perdent un temps précieux en appels infructueux. Notre mission était de créer une solution qui élimine ce gaspillage et maximise chaque opportunité.</p>
+                            <p data-translate="demo-desc-<p data-translate="demo-desc-about">Fondée en 2018 par une équipe d'experts en technologie et en vente, SMART HOTLINE est née d'une observation simple : les entreprises perdent un temps précieux en appels infructueux. Notre mission était de créer une solution qui élimine ce gaspillage et maximise chaque opportunité.</p>
                             <a href="#" class="btn btn-primary" data-page="team" data-translate="demo-cta-about">Rencontrer notre équipe</a>
                         </div>
                         <div class="demo-image fade-in">
-                            <img src="https://z-cdn-media.chatglm.cn/files/d1cc0af1-f127-42e8-8f8c-e9b7279b660a__42bb39b3-b513-4a3c-a0cb-bdf23f5bb329.jpeg?auth_key=1762212894-4fb5a92b351642ff9e5d9f8e2999ef8d-0-198b1ba037d32e671394684df62ffd23" alt="Company History" style="width: 100%; height: auto; border-radius: var(--radius);">
+                            <img src="https://z-cdn-media.chatglm.cn/files/d1cc0af1-f127-42e8-8f8c-e9b7279b660a__42bb39b3-b513-4a3c-a0cb-bdf23f5bb329.jpeg?auth_key=1762212894-4fb5a92b351642ff9e5d9f8e2999ef8d-0-198b1ba037d32e671394684df62ffd23" alt="Company History" style="width: 100%; height: auto; border-radius: var(--radius);" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -2748,7 +2866,7 @@
                             </ul>
                         </div>
                         <div class="about-image fade-in">
-                            <img src="https://z-cdn-media.chatglm.cn/files/dbfe98d4-0386-4077-b71d-14174ea47cda_png-transparent-call-centre-customer-service-telephone-operator-classified-advertising-call-center-mujer-microphone-hand-service-thumbnail%20%281%29.png?auth_key=1762212894-ec92c99271d949c8ac2becfe80a1066b-0-95229b3e3693aa8922eeccae89ff0c44" alt="CRM Technology" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius);">
+                            <img src="https://z-cdn-media.chatglm.cn/files/dbfe98d4-0386-4077-b71d-14174ea47cda_png-transparent-call-centre-customer-service-telephone-operator-classified-advertising-call-center-mujer-microphone-hand-service-thumbnail%20%281%29.png?auth_key=1762212894-ec92c99271d949c8ac2becfe80a1066b-0-95229b3e3693aa8922eeccae89ff0c44" alt="CRM Technology" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius);" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -2796,7 +2914,7 @@
                     <h2 class="section-title" data-translate="team-title">Notre Équipe</h2>
                     <div class="team-grid">
                         <div class="team-member fade-in">
-                            <div class="member-avatar">JD</div>
+                            <img src="team-400.webp" alt="Jean Dupont" class="member-avatar" loading="lazy">
                             <div class="member-name">Jean Dupont</div>
                             <div class="member-role" data-translate="team-ceo">CEO & Fondateur</div>
                         </div>
@@ -2898,7 +3016,7 @@
                             <a href="#" class="btn btn-primary" data-page="resources" data-translate="demo-cta-blog">Explorer nos ressources</a>
                         </div>
                         <div class="demo-image fade-in">
-                            <img src="https://picsum.photos/seed/blog-resources/500/400.jpg" alt="Blog Resources" style="width: 100%; height: auto; border-radius: var(--radius);">
+                            <img src="https://picsum.photos/seed/blog-resources/500/400.jpg" alt="Blog Resources" style="width: 100%; height: auto; border-radius: var(--radius);" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -2910,7 +3028,7 @@
                     <div class="blog-grid">
                         <div class="blog-card fade-in" data-article="1">
                             <div class="blog-image">
-                                <img src="https://picsum.photos/seed/crm-strategy/400/180.jpg" alt="CRM Strategy" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="https://picsum.photos/seed/crm-strategy/400/180.jpg" alt="CRM Strategy" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
@@ -2924,7 +3042,7 @@
                         </div>
                         <div class="blog-card fade-in" data-article="2">
                             <div class="blog-image">
-                                <img src="https://picsum.photos/seed/ai-technology/400/180.jpg" alt="AI Technology" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="https://picsum.photos/seed/ai-technology/400/180.jpg" alt="AI Technology" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
@@ -2938,7 +3056,7 @@
                         </div>
                         <div class="blog-card fade-in" data-article="3">
                             <div class="blog-image">
-                                <img src="https://picsum.photos/seed/roi-analytics/400/180.jpg" alt="ROI Analytics" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="https://picsum.photos/seed/roi-analytics/400/180.jpg" alt="ROI Analytics" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
@@ -2952,7 +3070,7 @@
                         </div>
                         <div class="blog-card fade-in" data-article="4">
                             <div class="blog-image">
-                                <img src="https://picsum.photos/seed/sales-training/400/180.jpg" alt="Sales Training" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="https://picsum.photos/seed/sales-training/400/180.jpg" alt="Sales Training" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
@@ -2975,7 +3093,7 @@
                     <div class="resources-grid">
                         <div class="resource-card fade-in">
                             <div class="resource-image">
-                                <img src="https://picsum.photos/seed/ebook-guide/400/180.jpg" alt="Ebook Guide" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="https://picsum.photos/seed/ebook-guide/400/180.jpg" alt="Ebook Guide" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                             </div>
                             <div class="resource-content">
                                 <div class="resource-type" data-translate="resource-type-ebook">Ebook</div>
@@ -2986,7 +3104,7 @@
                         </div>
                         <div class="resource-card fade-in">
                             <div class="resource-image">
-                                <img src="https://picsum.photos/seed/webinar-training/400/180.jpg" alt="Webinar Training" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="https://picsum.photos/seed/webinar-training/400/180.jpg" alt="Webinar Training" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                             </div>
                             <div class="resource-content">
                                 <div class="resource-type" data-translate="resource-type-webinar">Webinaire</div>
@@ -2997,7 +3115,7 @@
                         </div>
                         <div class="resource-card fade-in">
                             <div class="resource-image">
-                                <img src="https://picsum.photos/seed/template-scripts/400/180.jpg" alt="Template Scripts" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="https://picsum.photos/seed/template-scripts/400/180.jpg" alt="Template Scripts" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                             </div>
                             <div class="resource-content">
                                 <div class="resource-type" data-translate="resource-type-template">Modèles</div>
@@ -3008,7 +3126,7 @@
                         </div>
                         <div class="resource-card fade-in">
                             <div class="resource-image">
-                                <img src="https://picsum.photos/seed/case-study-collection/400/180.jpg" alt="Case Study Collection" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="https://picsum.photos/seed/case-study-collection/400/180.jpg" alt="Case Study Collection" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                             </div>
                             <div class="resource-content">
                                 <div class="resource-type" data-translate="resource-type-case-study">Étude de cas</div>
@@ -3055,7 +3173,7 @@
                             <a href="#" class="btn btn-primary" data-page="contact" data-translate="demo-cta-contact">Contacter un expert</a>
                         </div>
                         <div class="demo-image fade-in">
-                            <img src="https://picsum.photos/seed/contact-support/500/400.jpg" alt="Contact Support" style="width: 100%; height: auto; border-radius: var(--radius);">
+                            <img src="https://picsum.photos/seed/contact-support/500/400.jpg" alt="Contact Support" style="width: 100%; height: auto; border-radius: var(--radius);" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -3078,26 +3196,32 @@
                 <div class="container">
                     <div class="contact-form fade-in">
                         <h3 data-translate="contact-demo-title">Demandez une démonstration</h3>
-                        <form id="contact-form">
+                        <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                            <input type="hidden" name="form-name" value="contact">
                             <div class="form-group">
                                 <label data-translate="contact-form-name">Nom complet</label>
-                                <input type="text" class="form-control" id="contact-name" required>
+                                <input type="text" class="form-control" id="contact-name" name="name" required>
                             </div>
                             <div class="form-group">
                                 <label data-translate="contact-form-email">Email professionnel</label>
-                                <input type="email" class="form-control" id="contact-email" required>
+                                <input type="email" class="form-control" id="contact-email" name="email" required>
                             </div>
                             <div class="form-group">
                                 <label data-translate="contact-form-company">Entreprise</label>
-                                <input type="text" class="form-control" id="contact-company" required>
+                                <input type="text" class="form-control" id="contact-company" name="company" required>
                             </div>
                             <div class="form-group">
                                 <label data-translate="contact-form-phone">Téléphone</label>
-                                <input type="tel" class="form-control" id="contact-phone" required>
+                                <input type="tel" class="form-control" id="contact-phone" name="phone" required>
                             </div>
                             <div class="form-group">
                                 <label data-translate="contact-form-message">Message (optionnel)</label>
-                                <textarea class="form-control" id="contact-message" rows="4"></textarea>
+                                <textarea class="form-control" id="contact-message" name="message" rows="4"></textarea>
+                            </div>
+                            <!-- Netlify Honeypot Field -->
+                            <div class="form-group" style="display: none;">
+                                <label>Ne remplissez pas ce champ si vous êtes humain</label>
+                                <input type="text" name="bot-field">
                             </div>
                             <button type="submit" class="btn btn-primary" style="width: 100%;" data-translate="contact-form-submit">Envoyer la demande</button>
                         </form>
@@ -3173,11 +3297,11 @@
                 <div class="footer-column">
                     <h3 data-translate="footer-quick-links">Liens rapides</h3>
                     <ul class="footer-links">
-                        <li><a href="#" data-page="home" data-translate="footer-home">Accueil</a></li>
-                        <li><a href="#" data-page="features" data-translate="footer-features">Fonctionnalités</a></li>
-                        <li><a href="#" data-page="pricing" data-translate="footer-pricing">Tarifs</a></li>
-                        <li><a href="#" data-page="blog" data-translate="footer-blog">Blog</a></li>
-                        <li><a href="#" data-page="contact" data-translate="footer-contact">Contact</a></li>
+                        <li><a href="#home" data-page="home" data-translate="footer-home">Accueil</a></li>
+                        <li><a href="#features" data-page="features" data-translate="footer-features">Fonctionnalités</a></li>
+                        <li><a href="#pricing" data-page="pricing" data-translate="footer-pricing">Tarifs</a></li>
+                        <li><a href="#blog" data-page="blog" data-translate="footer-blog">Blog</a></li>
+                        <li><a href="#contact" data-page="contact" data-translate="footer-contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -3213,7 +3337,10 @@
     <div class="chat-popup">
         <div class="chat-header">
             <span>SMART HOTLINE</span>
-            <span class="chat-close"><i class="fas fa-times"></i></span>
+            <div>
+                <span class="chat-minimize"><i class="fas fa-minus"></i></span>
+                <span class="chat-close"><i class="fas fa-times"></i></span>
+            </div>
         </div>
         <div class="chat-body">
             <div class="chat-message" id="chat-welcome-message">
@@ -3247,7 +3374,7 @@
                 <h2>Réserver une réunion</h2>
             </div>
             <div class="modal-body">
-                <iframe src="https://calendly.com/boubah-karim/30min" style="width: 100%; height: 600px; border: none; border-radius: var(--radius);"></iframe>
+                <iframe src="https://calendly.com/boubah-karim/30min" style="width: 100%; height: 600px; border: none; border-radius: var(--radius);" loading="lazy"></iframe>
             </div>
         </div>
     </div>
@@ -4127,7 +4254,7 @@
                 "cta-blog-subtitle": "Abonnieren Sie unseren Newsletter, um die neuesten Nachrichten, Tipps und exklusiven Ressourcen zu erhalten.",
                 "cta-blog-subscribe": "Newsletter abonnieren",
                 "demo-title-contact": "Bereit zu starten?",
-                "demo-desc-contact": "Unser Expertenteam ist bereit, alle Ihre Fragen zu beantworten und Sie bei der Einrichtung Ihrer personalisierten Akquise-Lösung zu unterstützen.",
+                "demo-desc-contact": "Unser Expertenteam ist bereit, alle Ihre Fragen zu beantworten und Sie bei der Implementierung Ihrer personalisierten Akquise-Lösung zu unterstützen.",
                 "demo-cta-contact": "Experten kontaktieren",
                 "stats-contact-title": "Warum uns wählen",
                 "stats-support-contact": "24/7-Support",
@@ -4163,8 +4290,7 @@
                 "feature-3-desc": "Acceda a nuestras bases de datos B2B segmentadas por industria con contactos móviles 100% actualizados.",
                 "feature-3-full-desc": "Gestione todos sus contactos, notas de llamadas y seguimientos en nuestro CRM integrado y personalizable para un seguimiento óptimo del cliente. Sincronización con sus herramientas existentes.",
                 "feature-4-title": "Análisis en Tiempo Real",
-                "feature-4-desc": "Monitoree su rendimiento en tiempo real con nuestros paneles analíticos detallados y personalizables.",
-                "feature-4-full-desc": "Monitoree su rendimiento en tiempo real con nuestros paneles analíticos detallados y personalizables. Informes automatizados enviados diariamente.",
+                               "feature-4-full-desc": "Monitoree su rendimiento en tiempo real con nuestros paneles analíticos detallados y personalizables. Informes automatizados enviados diariamente.",
                 "feature-5-title": "Listas B2B/B2C",
                 "feature-5-full-desc": "Acceda a nuestras bases de datos B2B y B2C segmentadas por industria, ubicación y otros criterios relevantes. Actualizaciones mensuales que garantizan contactos frescos.",
                 "feature-6-title": "Soporte 24/7",
@@ -4537,13 +4663,147 @@
             });
         }
 
-        // Multi-page navigation
+        // SPA Routing
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(`${pageId}-page`).classList.add('active');
+            
+            // Update URL
+            history.pushState({page: pageId}, '', `#${pageId}`);
+            
+            // Update active navigation
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-page') === pageId) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Handle browser back/forward
+        window.addEventListener('popstate', function(event) {
+            if (event.state && event.state.page) {
+                showPage(event.state.page);
+            } else {
+                const hash = window.location.hash.substring(1);
+                if (hash) {
+                    showPage(hash);
+                } else {
+                    showPage('home');
+                }
+            }
+        });
+
+        // Handle initial page load
+        window.addEventListener('load', function() {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                showPage(hash);
+            } else {
+                showPage('home');
+            }
+        });
+
+        // Update pricing based on sliders with progressive discounts
+        function updatePricing() {
+            const usersValue = document.getElementById('users-value').textContent;
+            const contactsValue = document.getElementById('contacts-value').textContent;
+            const isQuarterly = document.getElementById('billing-toggle').checked;
+            
+            let userMultiplier = 1;
+            let userDiscount = 0;
+            
+            // Apply progressive discounts based on number of users
+            if (usersValue === '2 à 5') {
+                userMultiplier = 3.5; // Average of 2-5
+                userDiscount = 0.10; // 10% discount
+            } else if (usersValue === '6 à 15') {
+                userMultiplier = 10.5; // Average of 6-15
+                userDiscount = 0.15; // 15% discount
+            } else if (usersValue === 'Plus') {
+                userMultiplier = 15; // For 15+ users
+                userDiscount = 0.20; // 20% discount
+            }
+            
+            let contactsMultiplier = 1;
+            if (contactsValue === '4000') contactsMultiplier = 1.5;
+            else if (contactsValue === '8000') contactsMultiplier = 2;
+            else if (contactsValue === '15000+') contactsMultiplier = 3;
+            
+            const priceElements = document.querySelectorAll('.price-value');
+            priceElements.forEach((element, index) => {
+                let plan;
+                if (index === 0) plan = 'starter';
+                else if (index === 1) plan = 'pro';
+                else plan = 'enterprise';
+                
+                let basePrice = basePrices[plan];
+                
+                // Adjust price based on users
+                basePrice *= userMultiplier;
+                
+                // Apply user discount
+                basePrice *= (1 - userDiscount);
+                
+                // Adjust price based on contacts
+                basePrice *= contactsMultiplier;
+                
+                // Apply quarterly discount
+                if (isQuarterly) {
+                    basePrice *= 0.9; // 10% discount for quarterly billing
+                }
+                
+                // Convert to selected currency and round to nearest whole number
+                const convertedPrice = Math.round(basePrice * currencyRates[currentCurrency]);
+                element.textContent = convertedPrice;
+            });
+        }
+
+        // Update pricing options highlight based on selected options
+        function updatePricingOptionsHighlight() {
+            const usersValue = document.getElementById('users-value').textContent;
+            const contactsValue = document.getElementById('contacts-value').textContent;
+            const isQuarterly = document.getElementById('billing-toggle').checked;
+            
+            const optionsTitle = document.getElementById('pricing-options-title');
+            const optionsDesc = document.getElementById('pricing-options-desc');
+            
+            // Update title based on selected options
+            let titleText = "CRM avec auto-dialer intelligent, filtre de répondeurs IA intelligent, rapport et statistiques détaillées";
+            
+            // Add user information
+            if (usersValue !== '1') {
+                titleText += ` pour ${usersValue} utilisateurs`;
+            }
+            
+            // Add contact information
+            if (contactsValue !== '1000') {
+                titleText += ` et ${contactsValue} contacts/mois`;
+            }
+            
+            // Add billing information
+            if (isQuarterly) {
+                titleText += " (facturation trimestrielle avec 10% de réduction)";
+            }
+            
+            optionsTitle.textContent = titleText;
+            
+            // Update description
+            optionsDesc.textContent = "Tous nos forfaits incluent nos fonctionnalités de base avec des différences sur la durée d'utilisation quotidienne";
+        }
+
+        // Document ready
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize language and currency
             initializeLanguageAndCurrency();
-            
-            // Show home page by default
-            showPage('home');
             
             // Add event listeners to all navigation links
             document.querySelectorAll('a[data-page]').forEach(link => {
@@ -4722,9 +4982,15 @@
                 });
             });
             
-            // Chat bubble
+            // Chat bubble - always visible
             document.querySelector('.chat-bubble').addEventListener('click', function() {
                 document.querySelector('.chat-popup').classList.toggle('active');
+                document.querySelector('.chat-popup').classList.remove('minimized');
+            });
+            
+            // Chat minimize button
+            document.querySelector('.chat-minimize').addEventListener('click', function() {
+                document.querySelector('.chat-popup').classList.toggle('minimized');
             });
             
             // Chat close button
@@ -4745,7 +5011,7 @@
                 document.querySelector('.chat-popup').classList.remove('active');
             });
             
-            // Contact form submission
+            // Contact form submission with Netlify
             document.getElementById('contact-form').addEventListener('submit', function(e) {
                 e.preventDefault();
                 
@@ -4810,107 +5076,6 @@
                 observer.observe(el);
             });
         });
-        
-        function showPage(pageId) {
-            // Hide all pages
-            document.querySelectorAll('.page').forEach(page => {
-                page.classList.remove('active');
-            });
-            
-            // Show selected page
-            document.getElementById(`${pageId}-page`).classList.add('active');
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
-
-        // Update pricing based on sliders with progressive discounts
-        function updatePricing() {
-            const usersValue = document.getElementById('users-value').textContent;
-            const contactsValue = document.getElementById('contacts-value').textContent;
-            const isQuarterly = document.getElementById('billing-toggle').checked;
-            
-            let userMultiplier = 1;
-            let userDiscount = 0;
-            
-            // Apply progressive discounts based on number of users
-            if (usersValue === '2 à 5') {
-                userMultiplier = 3.5; // Average of 2-5
-                userDiscount = 0.07; // 7% discount
-            } else if (usersValue === '6 à 15') {
-                userMultiplier = 10.5; // Average of 6-15
-                userDiscount = 0.18; // 18% discount
-            } else if (usersValue === 'Plus') {
-                userMultiplier = 15; // For 15+ users
-                userDiscount = 0.25; // 25% discount
-            }
-            
-            let contactsMultiplier = 1;
-            if (contactsValue === '4000') contactsMultiplier = 1.5;
-            else if (contactsValue === '8000') contactsMultiplier = 2;
-            else if (contactsValue === '15000+') contactsMultiplier = 3;
-            
-            const priceElements = document.querySelectorAll('.price-value');
-            priceElements.forEach((element, index) => {
-                let plan;
-                if (index === 0) plan = 'starter';
-                else if (index === 1) plan = 'pro';
-                else plan = 'enterprise';
-                
-                let basePrice = basePrices[plan];
-                
-                // Adjust price based on users
-                basePrice *= userMultiplier;
-                
-                // Apply user discount
-                basePrice *= (1 - userDiscount);
-                
-                // Adjust price based on contacts
-                basePrice *= contactsMultiplier;
-                
-                // Apply quarterly discount
-                if (isQuarterly) {
-                    basePrice *= 0.9; // 10% discount for quarterly billing
-                }
-                
-                // Convert to selected currency and round to nearest whole number
-                const convertedPrice = Math.round(basePrice * currencyRates[currentCurrency]);
-                element.textContent = convertedPrice;
-            });
-        }
-
-        // Update pricing options highlight based on selected options
-        function updatePricingOptionsHighlight() {
-            const usersValue = document.getElementById('users-value').textContent;
-            const contactsValue = document.getElementById('contacts-value').textContent;
-            const isQuarterly = document.getElementById('billing-toggle').checked;
-            
-            const optionsTitle = document.getElementById('pricing-options-title');
-            const optionsDesc = document.getElementById('pricing-options-desc');
-            
-            // Update title based on selected options
-            let titleText = "CRM avec auto-dialer intelligent, filtre de répondeurs IA intelligent, rapport et statistiques détaillées";
-            
-            // Add user information
-            if (usersValue !== '1') {
-                titleText += ` pour ${usersValue} utilisateurs`;
-            }
-            
-            // Add contact information
-            if (contactsValue !== '1000') {
-                titleText += ` et ${contactsValue} contacts/mois`;
-            }
-            
-            // Add billing information
-            if (isQuarterly) {
-                titleText += " (facturation trimestrielle avec 10% de réduction)";
-            }
-            
-            optionsTitle.textContent = titleText;
-            
-            // Update description
-            optionsDesc.textContent = "Tous nos forfaits incluent nos fonctionnalités de base avec des différences sur la durée d'utilisation quotidienne";
-        }
     </script>
 </body>
 </html>
